@@ -1,0 +1,36 @@
+<div class="m-3">
+    <div class="border border-primary p-2 bg-light mb-2" *ngIf="detailData">
+        <div class="text-center">
+            <img style="max-height: 200px;" src="{{ detailData?.links?.mission_patch_small }}" class="rounded" alt="...">
+        </div>
+        <div class="row detailDiv">
+            <div class="col-md-4 col-sm-12">
+                <label>Mission Name :</label>
+                {{ detailData.mission_name }}
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <label>Mission Details :</label>
+                {{ detailData.details || 'Not Available' }}
+            </div>
+        </div>
+        <div class="row detailDiv">
+            <div class="col-md-4 col-sm-12">
+                <label>Launch Date :</label>
+                {{ detailData.launch_date_local | date }}
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label>Flight Number :</label>
+                {{ detailData.flight_number }}
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label>Launch Success :</label>
+                {{ detailData.launch_success }}
+            </div>
+        </div>
+        <div class="row detailDiv text-center">
+            <a href="/">
+                <button class="btn btn-primary">BACK</button>
+            </a>
+        </div>
+    </div>
+</div>

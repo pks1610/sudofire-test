@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DemoDataService } from './service/demo-data.service'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sudofire-test';
+  demoData: any[] = [];
+  show = true;
+  
+  constructor(private dataService: DemoDataService){
+    this.dataService.getData().subscribe(data => {
+      this.demoData = data;
+    })
+  }
+
+  ngOnInit(){
+    
+  }
+
+  hideTable(e){
+    this.show = e;
+  }
 }
