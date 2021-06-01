@@ -1,5 +1,8 @@
 <div class="body">
   <div class="container" *ngIf="show">
+    <div style="float: right;">
+      <button class="btn btn-primary" (click)="loadMain()">Parent-Child-Parent</button> 
+    </div>
     <app-table [data]="demoData" (show)="hideTable($event)" class="m-3"></app-table>
   </div>
   <div class="container" *ngIf="!show">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DemoDataService } from './service/demo-data.service'
 
 @Component({
@@ -10,7 +11,10 @@ export class AppComponent {
   demoData: any[] = [];
   show = true;
   
-  constructor(private dataService: DemoDataService){
+  constructor(
+    private dataService: DemoDataService,
+    private router: Router
+  ){
     this.dataService.getData().subscribe(data => {
       this.demoData = data;
     })
@@ -22,5 +26,10 @@ export class AppComponent {
 
   hideTable(e){
     this.show = e;
+  }
+
+  loadMain(){
+    this.show = false;
+    this.router.navigate(['/parent'])
   }
 }

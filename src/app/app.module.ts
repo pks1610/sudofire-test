@@ -7,13 +7,17 @@ import { TableComponent } from './table/table.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
+import { MainComponent } from './main/main.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     HeaderComponent,
-    DetailsComponent
+    DetailsComponent,
+    MainComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

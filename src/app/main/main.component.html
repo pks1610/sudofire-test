@@ -1,0 +1,20 @@
+<div class="container border border-danger bg-primary">
+    <div class="m-3">
+        <button class="btn btn-dark" (click)="goToHome()">BACK</button>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6 col-sm-12 bg-light text-primary p-2">
+           <h2>Parent Component</h2>
+           <div class="m-2">
+                <h3 class="mt-2 mb-2 btn-danger text-white text-center">{{ count }}</h3>
+                <div class="d-flex">
+                    <button class="m-2 btn btn-primary btn-lg" (click)="inc()">Increment ++ from parent</button>
+                    <button class="m-2 ml-2 btn btn-success btn-lg" (click)="dec()">Decrement -- from parent</button>
+                </div>
+           </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <app-child [(count)]="count"></app-child>
+        </div>
+    </div>
+</div>
